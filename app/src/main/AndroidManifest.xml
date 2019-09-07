@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.example.tourguideapp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <permission
+        android:name="com.android.example.tourguideapp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.example.tourguideapp.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.evergreen.apps.tourguideapp.TourGuideApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name="com.evergreen.apps.tourguideapp.ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.evergreen.apps.tourguideapp.RecommendationWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/picture_widget_info" />
+        </receiver>
+
+        <activity
+            android:name="com.evergreen.apps.tourguideapp.ui.CategoryActivity"
+            android:theme="@style/AppTheme">
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.evergreen.apps.tourguideapp.ui.fragments.MapFragment"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name="com.evergreen.apps.tourguideapp.ui.PlaceActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.evergreen.apps.tourguideapp.ui.CategoryActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.evergreen.apps.tourguideapp.ui.DetailsActivity"
+            android:parentActivityName="com.evergreen.apps.tourguideapp.ui.PlaceActivity" />
+        <activity android:name="com.evergreen.apps.tourguideapp.BaseActivity" />
+        <activity android:name="com.evergreen.apps.tourguideapp.ui.SettingsActivity" />
+
+        <service android:name="com.evergreen.apps.tourguideapp.services.PhotosService" />
+        <service android:name="com.evergreen.apps.tourguideapp.sync.LocationSyncIntentService" />
+        <service
+            android:name="com.evergreen.apps.tourguideapp.sync.LocationFirebaseJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+        <service android:name="com.evergreen.apps.tourguideapp.utils.GPSTracker" />
+
+        <provider
+            android:name="com.evergreen.apps.tourguideapp.providers.LocationProvider"
+            android:authorities="com.android.example.tourguideapp.provider"
+            android:exported="true"
+            android:permission="com.android.example.tourguideapp.provider.READ_WRITE" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_application_id"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,87 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Ever Tour-Guider</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Ever Tour Guider</string>
+    <string name="nav_header_subtitle">https://evergreenitsolutions.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="view_on_map">View on Map</string>
+
+    <string name="detail_address">Address: %1$s</string>
+    <string name="detail_city">City: %1$s</string>
+    <string name="detail_country">Country: %1$s</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="place_icon">Place Icon</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="address_found">address found</string>
+    <string name="no_address_found">no address found</string>
+    <string name="service_not_available">service not available</string>
+    <string name="invalid_lat_long_used">invalid lat long used</string>
+    <string name="no_geocoder_available">no geocoder available</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="place_name">PLACE NAME</string>
+    <string name="place_address">PLACE ADDRESS</string>
+    <string name="place_city">PLACE CITY</string>
+    <string name="place_country">PLACE COUNTRY</string>
+    <string name="toolbar_image_description">background image for details page</string>
+    <string name="category_icon">Category Icon</string>
+    <string name="tip_photo_image">Tip Photo Image</string>
+    <string name="location_permission_denied">Permission denied!</string>
+    <string name="permission_required_toast">permission required</string>
+    <string name="permission_rationale_location">We will need your location to customize your experience!</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="mandatory_permissions_string">These permissions are mandatory to get your location. You need to allow them.</string>
+    <string name="shared_transition_name">profile</string>
+    <string name="category">%s Category</string>
+    <string name="app_label">Search here</string>
+    <string name="search_hint">Search..</string>
+    <string name="gps_network_not_enabled">GPS network not enabled</string>
+    <string name="open_location_settings">Open Location Settings</string>
+    <string name="Cancel">Cancel</string>
+    <string name="back_button_for_for_details_screen">Back button for for details screen</string>
+    <string name="away_string_values">%skm away</string>
+    <string name="widget_first_image">widget first image</string>
+    <string name="widget_second_image">widget second image</string>
+    <string name="widget_third_image">widget third image</string>
+    <string name="recommendation">Places You can Visit </string>
+    <string name="login">Login/SignUp</string>
+    <string name="copyright_notice">Copyright© 2019 Evergreen Tour Guider All Rights reserved.</string>
+
+
+    <string name="facebook_application_id">504089150345842</string>
+    <string name="alert_ok">OK</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="alert_retry">RETRY</string>
+    <string name="message_default_title">message</string>
+
+    <string name="alertmsg" tools:ignore="MissingTranslation">Location</string>
+    <string name="alert_msg2" tools:ignore="MissingTranslation">Need permission to retrieve your location</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_search">Search</string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+</resources>

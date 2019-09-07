@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    signingConfigs {
+        androidKeyFile {
+            keyAlias 'tourguide_key'
+            keyPassword 'm@roon$88'
+            storeFile file('keystores/tourguide_key.jks')
+            storePassword 'm@roon$88'
+        }
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.evergreen.apps.tourguideapp"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+                arguments = [eventBusIndex: 'com.android.example.tourguideapp.EventBusIndex']
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.androidKeyFile
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.preference:preference:1.1.0-rc01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'com.android.databinding:library:1.3.3'
+    implementation 'com.android.databinding:adapters:1.3.3'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+
+//    implementation 'com.jakewharton:butterknife-compiler:8.8.1'
+//    implementation 'com.jakewharton:butterknife:8.8.1'
+//    implementation 'com.jakewharton:butterknife-annotations:8.8.1'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    implementation 'com.github.amanjeetsingh150:CoolProgressViews:1.0'
+
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
+
+    implementation 'androidx.room:room-runtime:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.0.0'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.0.0'
+
+    implementation 'com.firebase:firebase-jobdispatcher:0.5.0'
+
+    implementation 'com.firebaseui:firebase-ui-auth:4.3.2'
+    implementation 'com.google.firebase:firebase-auth:18.1.0'
+    implementation 'com.google.firebase:firebase-firestore:20.2.0'
+
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.tapadoo.android:alerter:2.0.4'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+
+    implementation 'com.facebook.android:facebook-android-sdk:4.5.0'
+//    implementation 'com.facebook.android:facebook-login:4.5.0'
+
+    implementation  'io.sentry:sentry-android:1.7.27'
+    implementation  'org.slf4j:slf4j-nop:1.7.25'
+}
+
+apply plugin: 'com.google.gms.google-services'

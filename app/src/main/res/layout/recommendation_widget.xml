@@ -1,0 +1,32 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:padding="@dimen/widget_margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recommendation"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/colorWhite"/>
+
+    <LinearLayout
+        android:id="@+id/widget_recommendations_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+    <!--<ImageView-->
+        <!--android:contentDescription="@string/widget_first_image"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/widget_image_1"/>-->
+
+</LinearLayout>
